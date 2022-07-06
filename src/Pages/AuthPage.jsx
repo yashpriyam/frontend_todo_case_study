@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import { LoginComponent } from "../Components/LoginForm/LoginComponent";
 
 const Login = () => {
   async function test() {
@@ -13,7 +14,9 @@ const Login = () => {
 
   return (
     <div>
-      <h1>Test Component</h1>
+      <div>
+        <LoginComponent />
+      </div>
     </div>
   );
 };
