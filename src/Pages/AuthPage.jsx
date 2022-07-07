@@ -1,24 +1,32 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import login from "../assets/login_page_graphics.svg";
+import line from "../assets/Line22.svg";
+import "./AuthPage.css";
+import { SignUpComponent } from "../Components/SignupForm/SignupComponent";
 import { LoginComponent } from "../Components/LoginForm/LoginComponent";
 
-const Login = () => {
-  async function test() {
-    const response = await axios.get("/api/auth/isloggedin");
-    response && console.log({ resp: response.data });
-  }
-
-  useEffect(() => {
-    test();
-  }, []);
+const AuthPage = () => {
+  const [showForm, setShowForm] = useState("login");
 
   return (
     <div>
-      <div>
-        <LoginComponent />
+      <img className="login" src={login} alt="ads" />
+
+      <div className="form-login">
+        <div className="kuch-bhi">
+          <h4 className="log-in" onClick={() => setShowForm("login")}>
+            Log In
+          </h4>
+          <h4 className="sign-up" onClick={() => setShowForm("signup")}>
+            Sign up
+          </h4>
+        </div>
+        <img className="line" src={line} alt="line" />
+        {showForm === "signup" ? <SignUpComponent /> : <LoginComponent />}
       </div>
     </div>
   );
 };
 
-export default Login;
+export default AuthPage;

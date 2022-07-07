@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Toast from "../../helpers/utils/toast";
 import useHttp from "../../helpers/customHooks/useHttp";
 import { ErrorComponent } from "../ValidateError/ErrorComponent";
+import "./SignupComponent.css";
 
 const INITIAL_USER = {
   name: "",
@@ -107,7 +108,7 @@ const SignUpComponent = () => {
 
   return (
     <>
-      <h1>Create Account</h1>
+      {/* <h1>Create Account</h1>
       <form>
         <div>
           <input
@@ -152,7 +153,43 @@ const SignUpComponent = () => {
           disabled={isLoading}>
           Sign up
         </button>
-      </form>
+      </form> */}
+      <div className="input-section">
+        <input
+          className="fullname"
+          type="text"
+          placeholder="Full Name"
+          name="name"
+          value={name}
+          onChange={handleInput}
+        />
+        <br></br>
+        <input
+          className="email"
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={email}
+          onChange={handleInput}
+        />
+        <br></br>
+        <input
+          className="Password"
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={password}
+          onChange={handleInput}
+        />
+        <br></br>
+        <button className="button" onClick={authenticateUser}>
+          Sign Up
+        </button>
+      </div>
+      <div className="checkbox">
+        <input type="checkbox" className="color" />
+        Remember me
+      </div>
     </>
   );
 };

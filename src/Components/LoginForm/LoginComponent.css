@@ -1,0 +1,100 @@
+.to-continue {
+  /* position: absolute; */
+  /* width: 128px; */
+  margin-right: 210px;
+  height: 0.5px;
+  left: 886px;
+  top: 327px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 101.1%;
+  /* or 21px */
+
+  color: #1a3b58;
+}
+
+.text {
+  margin-right: 190px;
+  /* position: absolute; */
+  /* width: 141px; */
+  height: 21px;
+  left: 886px;
+  top: 354px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 15px;
+  /* identical to box height */
+
+  color: #999999;
+}
+
+.email {
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 401px;
+
+  background: #ffffff;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+}
+
+.Password {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 480px;
+
+  background: #ffffff;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+}
+
+.button {
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 564px;
+
+  background: #329c89;
+  border-radius: 8px;
+  color: white;
+}
+
+.input-section {
+  padding: 2px 2px 2px 2px;
+}
+
+.checkbox {
+  padding-top: 40px;
+  margin-right: 190px;
+  /* background: #329C89; */
+}
+
+.color {
+  background: #329c89;
+}
+
+.new-line {
+  margin-top: 70px;
+}
+
+/* .adjust {
+  margin-right: 0px;
+} */

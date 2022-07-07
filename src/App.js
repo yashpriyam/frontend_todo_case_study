@@ -13,9 +13,10 @@ const App = () => {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/login" component={LoginComponent} />
-            <Route exact path="/signup" component={SignUpComponent} />
+            {/* <Route exact path="/login" component={LoginComponent} />
+            <Route exact path="/signup" component={SignUpComponent} /> */}
             <Route exact path="/" component={Board} />
+            <Route exact path="/auth" component={AuthPage} />
           </Switch>
         </div>
       </Router>

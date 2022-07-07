@@ -68,19 +68,19 @@ const userLogin = async (req, res) => {
 
 const tokenIsValid = async (req, res) => {
   try {
-    // const token = req.cookies.auth_token;
-    // if (!token) {
-    //   return res.status(401).json({ error: "Unauthorized user." });
-    // }
+    const token = req.cookies.auth_token;
+    if (!token) {
+      return res.status(401).json({ error: "Unauthorized user." });
+    }
 
-    // const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
+    const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
 
-    // if (verifyToken) {
-    //   res.status(200).json({ message: true });
-    // } else {
-    //   return res.status(401).json({ message: false });
-    // }
-    res.send("success");
+    if (verifyToken) {
+      res.status(200).json({ message: true });
+    } else {
+      return res.status(401).json({ message: false });
+    }
+    // res.send("success");
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }

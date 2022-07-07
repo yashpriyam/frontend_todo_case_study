@@ -1,0 +1,46 @@
+.log-in {
+  /* position: absolute; */
+  /* width: 77px; */
+  /* height: 26px; */
+  /* left: 819px; */
+  /* top: 216px; */
+  width: 128px;
+  height: 21px;
+  left: 886px;
+  top: 327px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 101.1%;
+  /* or 26px */
+
+  color: #1a3b58;
+}
+
+.kuch-bhi {
+  margin-top: 50px;
+  display: flex;
+  /* display: inline-block; */
+}
+
+.sign-up {
+  /* position: absolute; */
+  /* width: 114px;
+height: 26px;
+left: 919px;
+top: 216px;  */
+  width: 128px;
+  height: 21px;
+  left: 886px;
+  top: 327px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 101.1%;
+
+  color: rgba(26, 59, 88, 0.33);
+}
