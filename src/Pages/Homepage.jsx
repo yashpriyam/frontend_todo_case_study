@@ -11,7 +11,7 @@ const HomePage = () => {
 
   const [cardListData, setCardListData] = useState([]);
 
-  console.log({ cardListStateAndDispatch });
+  // console.log({ cardListStateAndDispatch });
 
   useEffect(() => {
     (async () => {
@@ -25,7 +25,7 @@ const HomePage = () => {
     })();
   }, []);
 
-  console.log({ cardListData });
+  // console.log({ cardListData });
 
   return (
     <div className="homepage-container">
