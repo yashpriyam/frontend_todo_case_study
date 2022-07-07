@@ -112,54 +112,6 @@ const LoginComponent = () => {
   };
 
   return (
-    // <div>
-    //   <form onSubmit={authenticateUser}>
-    //     <div>
-    //       <h2>LOGIN</h2>
-    //     </div>
-    //     <div>
-    //       <input
-    // type="text"
-    // id="email"
-    // name="email"
-    // value={email}
-    // onBlur={checkInputErrors}
-    // onChange={handleInput}
-    //       />
-    //       Email
-    //     </div>
-
-    //     {emailError && <ErrorComponent error={emailError} />}
-    //     <div>
-    //       <input
-    //         type="password"
-    //         id="password"
-    //         name="password"
-    //         value={password}
-    //         onBlur={checkInputErrors}
-    //         onChange={handleInput}
-    //       />
-    //       Password
-    //     </div>
-
-    //     {passwordError && <ErrorComponent error={passwordError} />}
-
-    //     <br></br>
-    //     <div className="remember-me">
-    //       <input
-    //         type="checkbox"
-    //         id="rememberMe"
-    //         checked={isChecked}
-    //         onChange={() => setChecked((prev) => !prev)}
-    //       />
-    //       <label htmlFor="rememberMe"> Remember Me</label>
-    //     </div>
-
-    //     <div className="container-log-btn">
-    //       <button type="submit">Login</button>
-    //     </div>
-    //   </form>
-    // </div>
     <>
       <h4 className="to-continue">To Continue</h4>
       <p className="text">we need your name and email</p>

@@ -8,13 +8,7 @@ const cardListSchema = new mongoose.Schema({
     {
       title: { type: String, required: true, unique: true, default: "TODO" },
       id: { type: String, required: true, unique: true, default: "1" },
-      cards: [
-        // {
-        //   title: String,
-        //   id: String,
-        //   description: String,
-        // },
-      ],
+      cards: [],
     },
   ],
 });

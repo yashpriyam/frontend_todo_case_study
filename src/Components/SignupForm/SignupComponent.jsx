@@ -116,52 +116,6 @@ const SignUpComponent = () => {
 
   return (
     <>
-      {/* <h1>Create Account</h1>
-      <form>
-        <div>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={handleInput}
-          />
-          UserName
-        </div>
-
-        {nameError && <ErrorComponent error={nameError} />}
-        <div>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleInput}
-          />
-          Email
-        </div>
-
-        {emailError && <ErrorComponent error={emailError} />}
-
-        <div className="password-input">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handleInput}
-          />
-          Password
-        </div>
-        {passwordError && <ErrorComponent error={passwordError} />}
-        <button
-          className="signup-btn margin"
-          type="submit"
-          onClick={authenticateUser}
-          disabled={isLoading}>
-          Sign up
-        </button>
-      </form> */}
       <div className="input-section">
         <input
           className="fullname"

@@ -16,7 +16,7 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
   useEffect(() => {
     (async () => {
       const response = await sendRequest(`/api/auth/user/${userId}`);
-      console.log({ response });
+
       setUserData(response.data);
     })();
   }, []);
@@ -64,15 +64,6 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
       <br></br>
 
       <div className={`avatar-icon ex-small`}>
-        {/* {true ? (
-          <img
-            src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png"
-            alt="profile image"
-            className={`avatar-image ex-small`}
-          />
-        ) : (
-          <i className="fas fa-user" />
-        )} */}
         {userData && userData.name && userData.avatar_color && (
           <div
             className={`avatar-image ex-small`}

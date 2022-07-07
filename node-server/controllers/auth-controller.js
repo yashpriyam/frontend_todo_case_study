@@ -119,26 +119,6 @@ const tokenIsValid = async (req, res) => {
   }
 };
 
-const authorisedRoute = async (req, res, next) => {
-  try {
-    const token = req.cookies.auth_token;
-    if (!token) {
-      return res.status(401).json({ error: "Unauthorized user." });
-    }
-
-    const verifyToken = jwt.verify(token, process.env.JWT_SECRET);
-
-    if (verifyToken) {
-      req.user = verifyToken._id;
-      next();
-    } else {
-      return res.status(401).json({ error: "Unauthorized user." });
-    }
-  } catch (error) {
-    return res.status(500).json({ error: "Unauthorized user." });
-  }
-};
-
 const logout = (req, res) => {
   res.clearCookie("auth_token");
   return res.status(200).json({ message: "Logged out successfully." });
@@ -148,6 +128,5 @@ module.exports = {
   userLogin,
   tokenIsValid,
   logout,
-  authorisedRoute,
   getUserById,
 };

@@ -42,9 +42,7 @@ const UserSchema = new mongoose.Schema({
   profile_image_key: {
     type: String,
   },
-  reputation: {
-    type: Number,
-  },
+
   resetToken: {
     data: String,
     default: "",
@@ -52,35 +50,6 @@ const UserSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  },
-  isOnline: {
-    type: Boolean,
-  },
-  googleDriveFolder: {
-    type: String,
-  },
-  googleDriveTokens: {
-    access_token: {
-      type: String,
-    },
-    refresh_token: {
-      type: String,
-    },
-    scope: {
-      type: String,
-    },
-    scope: {
-      type: String,
-    },
-    token_type: {
-      type: String,
-    },
-    id_token: {
-      type: String,
-    },
-    expiry_date: {
-      type: Number,
-    },
   },
 });
 

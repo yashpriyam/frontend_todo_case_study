@@ -15,7 +15,6 @@ export const CardList = ({ cardlist, cardlistIdx }) => {
   const [authState] = authenticateStateAndDispatch;
 
   const { id: userId } = JSON.parse(authState);
-  console.log({ userId });
 
   const handleCardAdd = () => {
     updatedState[cardlistIdx].cards.push({
