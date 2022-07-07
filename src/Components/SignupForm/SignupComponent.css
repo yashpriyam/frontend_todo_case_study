@@ -1,0 +1,109 @@
+.email {
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 401px;
+
+  background: #ffffff;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+}
+
+.fullname {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 480px;
+
+  background: #ffffff;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+}
+
+.Password {
+  margin-bottom: 30px;
+  box-sizing: border-box;
+
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 480px;
+
+  background: #ffffff;
+  border: 1px solid #cbdbea;
+  border-radius: 8px;
+}
+
+.button {
+  /* position: absolute; */
+  width: 314px;
+  height: 45px;
+  left: 886px;
+  top: 564px;
+
+  background: #329c89;
+  border-radius: 8px;
+  color: white;
+}
+
+.input-section {
+  padding: 2px 2px 2px 2px;
+}
+
+.checkbox {
+  padding-top: 40px;
+  margin-right: 190px;
+  /* background: #329C89; */
+}
+
+.color {
+  background: #329c89;
+}
+
+.login {
+  position: absolute;
+  left: 7.53%;
+  right: 59.34%;
+  top: 25.44%;
+  bottom: 27.89%;
+}
+
+.form-login {
+  position: relative;
+  width: 570px;
+  height: 550px;
+  left: 758px;
+  top: 128px;
+
+  background: #ffffff;
+  border: 2px solid rgba(26, 59, 88, 0.24);
+  border-radius: 65px;
+}
+
+.edit {
+  position: absolute;
+  width: 114px;
+  height: 26px;
+  left: 919px;
+  top: 216px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 101.1%;
+  /* or 26px */
+
+  color: rgba(26, 59, 88, 0.33);
+}

@@ -1,5 +1,40 @@
-.App{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.App {
+  text-align: center;
+}
+
+.login-graph {
+  position: absolute;
+  left: 7.53%;
+  right: 59.34%;
+  top: 25.44%;
+  bottom: 27.89%;
+}
+
+.form {
+  position: relative;
+  width: 570px;
+  height: 550px;
+  left: 758px;
+  top: 128px;
+
+  background: #ffffff;
+  border: 2px solid rgba(26, 59, 88, 0.24);
+  border-radius: 65px;
+}
+
+.edit {
+  position: absolute;
+  width: 114px;
+  height: 26px;
+  left: 919px;
+  top: 216px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 101.1%;
+  /* or 26px */
+
+  color: rgba(26, 59, 88, 0.33);
 }

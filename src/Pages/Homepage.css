@@ -1,0 +1,37 @@
+.homepage-container {
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.listadd-btn {
+  padding: 5px;
+  border-radius: 5px;
+  backface-visibility: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.listadd-btn:hover {
+  transform: scale(1.1);
+}
+
+.cardlist-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 10px;
+}
+
+.avatar {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 25.26px;
+  height: 25.26px;
+  left: 395.84px;
+  top: 462.77px;
+
+  /* background: url(image); */
+  border: 1px solid #e1e1e1;
+}

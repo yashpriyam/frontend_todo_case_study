@@ -1,0 +1,8 @@
+.logout-btn-container {
+  margin-top: 8px;
+}
+.logout-btn{
+  padding: 6px 20px;
+  background-color: #1a73e8;
+  color: white;
+}

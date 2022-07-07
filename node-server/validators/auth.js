@@ -32,39 +32,7 @@ const userSigninValidator = [
     .withMessage("Password must be at least 8 characters long"),
 ];
 
-const socialLoginValidator = async (req, res, next) => {
-  const { provider, accessToken } = req.body;
-
-  if (provider === "google") {
-    try {
-      const response = await axios({
-        url: `https://www.googleapis.com/oauth2/v3/tokeninfo?access_token=${accessToken}`,
-        method: "GET",
-      });
-
-      next();
-    } catch (error) {
-      return res.status(500).json({ error: "Authentication failed" });
-    }
-  }
-
-  if (provider === "facebook") {
-    try {
-      const response = await axios({
-        url: `https://graph.facebook.com/me?access_token=${accessToken}`,
-        method: "GET",
-      });
-      // console.log(response.data);
-      next();
-    } catch (error) {
-      // console.error(error);
-      return res.status(500).json({ error: "Authentication failed" });
-    }
-  }
-};
-
 module.exports = {
   userSignupValidator,
   userSigninValidator,
-  socialLoginValidator,
 };
