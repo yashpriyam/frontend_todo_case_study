@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import useHttp from "../../helpers/customHooks/useHttp";
 import { useHistory } from "react-router-dom";
 import { AppStateContext } from "../../AppState/appState.context";
+import "./LogoutBtn.css";
 
 const LogoutBtn = () => {
   const { sendRequest } = useHttp();
@@ -18,8 +19,12 @@ const LogoutBtn = () => {
   };
 
   return (
-    <div>
-      {loggedIn && <button onClick={() => logoutHandler()}>Logout</button>}
+    <div className="logout-btn-container">
+      {loggedIn && (
+        <button className="logout-btn" onClick={() => logoutHandler()}>
+          LOGOUT
+        </button>
+      )}
     </div>
   );
 };

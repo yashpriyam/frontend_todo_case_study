@@ -16,7 +16,8 @@
   color: #1a3b58;
 }
 
-.text {
+.text  {
+  color: #999999;
   margin-right: 190px;
   /* position: absolute; */
   /* width: 141px; */
@@ -31,7 +32,6 @@
   line-height: 15px;
   /* identical to box height */
 
-  color: #999999;
 }
 
 .email {
