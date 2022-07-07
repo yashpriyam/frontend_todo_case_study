@@ -14,10 +14,14 @@ const AuthPage = () => {
 
       <div className="form-login">
         <div className="kuch-bhi">
-          <h4 className="log-in" onClick={() => setShowForm("login")}>
+          <h4
+            className={`log-in ${showForm === "signup" && "active"}`}
+            onClick={() => setShowForm("login")}>
             Log In
           </h4>
-          <h4 className="sign-up" onClick={() => setShowForm("signup")}>
+          <h4
+            className={`sign-up ${showForm === "login" && "active"}`}
+            onClick={() => setShowForm("signup")}>
             Sign up
           </h4>
         </div>

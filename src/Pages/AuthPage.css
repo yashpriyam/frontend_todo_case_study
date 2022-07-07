@@ -16,7 +16,6 @@
   line-height: 101.1%;
   /* or 26px */
 
-  color: #1a3b58;
 }
 
 .kuch-bhi {
@@ -42,5 +41,7 @@ top: 216px;  */
   font-size: 26px;
   line-height: 101.1%;
 
+}
+.active{
   color: rgba(26, 59, 88, 0.33);
 }
