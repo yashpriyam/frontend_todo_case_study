@@ -1,4 +1,4 @@
-export const authenticateObject = localStorage.getItem("userData") || {};
+export const authenticateObject = localStorage.getItem("userAuthData") || {};
 
 export const authenticateReducer = (state, action) => {
   switch (action.type) {
@@ -9,9 +9,9 @@ export const authenticateReducer = (state, action) => {
 
       const newUsers = { id, email, name };
 
-      localStorage.setItem("userData", JSON.stringify(newUsers));
+      localStorage.setItem("userAuthData", JSON.stringify(newUsers));
 
-      const updatedUserData = localStorage.getItem("userData");
+      const updatedUserData = localStorage.getItem("userAuthData");
 
       state = updatedUserData;
       return state;

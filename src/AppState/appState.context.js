@@ -4,9 +4,11 @@ import {
   authenticateObject,
   authenticateReducer,
 } from "./reducers/authenticate.reducer";
+import { cardListReducer, cardListState } from "./reducers/cardList.reducer";
 
 import useHttp from "../helpers/customHooks/useHttp";
 import LoadingComponent from "../Components/loading/Loading.Component";
+
 export const AppStateContext = createContext();
 
 export const AppStateContextProvider = ({ children }) => {
@@ -40,12 +42,15 @@ export const AppStateContextProvider = ({ children }) => {
     authenticateObject
   );
 
+  const cardListStateAndDispatch = useReducer(cardListReducer, cardListState);
+
   return !isLoaded ? (
     <LoadingComponent windowHeight="100vh" />
   ) : (
     <AppStateContext.Provider
       value={{
         authenticateStateAndDispatch,
+        cardListStateAndDispatch,
         loggedIn,
         getLoggedIn,
       }}>

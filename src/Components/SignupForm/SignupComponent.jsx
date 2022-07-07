@@ -102,7 +102,8 @@ const SignUpComponent = () => {
 
       setUser(INITIAL_USER);
     } catch (error) {
-      Toast.info(error.message);
+      // Toast.info(error.message);
+      console.log({ error: error.message });
     }
   };
 

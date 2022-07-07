@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import login from "../assets/login_page_graphics.svg";
 import line from "../assets/Line22.svg";
 import "./AuthPage.css";
