@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppStateContext } from "../../AppState/appState.context";
 import useHttp from "../../helpers/customHooks/useHttp";
 import "./taskCard.css";
@@ -6,19 +6,18 @@ import "./taskCard.css";
 export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
   const { sendRequest } = useHttp();
 
-  const { title, description } = card;
+  const { id: userId, title, description } = card;
   const { cardListStateAndDispatch, authenticateStateAndDispatch } =
     useContext(AppStateContext);
   const [appState, dispatch] = cardListStateAndDispatch;
 
-  const [authState] = authenticateStateAndDispatch;
-
-  const { id } = JSON.parse(authState);
+  const [userData, setUserData] = useState({});
 
   useEffect(() => {
     (async () => {
-      const response = await sendRequest(`/api/auth/user/${id}`);
+      const response = await sendRequest(`/api/auth/user/${userId}`);
       console.log({ response });
+      setUserData(response.data);
     })();
   }, []);
 
@@ -74,11 +73,13 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
         ) : (
           <i className="fas fa-user" />
         )} */}
-        {/* <div
-          className={`avatar-image ex-small`}
-          style={{ backgroundColor: avatar_color }}>
-          {name.toLocaleUpperCase().at(0)}
-        </div> */}
+        {userData && userData.name && userData.avatar_color && (
+          <div
+            className={`avatar-image ex-small`}
+            style={{ backgroundColor: userData.avatar_color }}>
+            {userData.name.toLocaleUpperCase().at(0)}
+          </div>
+        )}
       </div>
 
       {/* <button className="card-remove-btn" onClick={handleCardRemove}>

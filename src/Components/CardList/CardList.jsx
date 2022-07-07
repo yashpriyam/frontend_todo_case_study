@@ -6,14 +6,20 @@ import "./cardList.css";
 
 export const CardList = ({ cardlist, cardlistIdx }) => {
   const { cards, title } = cardlist;
-  const { cardListStateAndDispatch } = useContext(AppStateContext);
+  const { cardListStateAndDispatch, authenticateStateAndDispatch } =
+    useContext(AppStateContext);
 
   const [appState, dispatch] = cardListStateAndDispatch;
   const updatedState = [...appState];
 
+  const [authState] = authenticateStateAndDispatch;
+
+  const { id: userId } = JSON.parse(authState);
+  console.log({ userId });
+
   const handleCardAdd = () => {
     updatedState[cardlistIdx].cards.push({
-      id: uuid(), // replace this with current user id
+      id: userId, // replace this with current user id
       title: "",
       description: "",
     });
@@ -58,7 +64,7 @@ export const CardList = ({ cardlist, cardlistIdx }) => {
       <div className="card-list-container">
         {cards.map((card, cardIdx, arr) => (
           <TaskCard
-            key={card.id}
+            key={cardIdx}
             card={card}
             cardIdx={cardIdx}
             cardlistIdx={cardlistIdx}
