@@ -30,23 +30,23 @@ const LoginComponent = () => {
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = authenticateStateAndDispatch;
 
-  // useEffect(() => {
-  //   if (error) {
-  //     Toast.info(error.error);
-  //   }
-  //   if (Cookies.get("email")) {
-  //     setChecked(true);
-  //     setUser((prev) => {
-  //       return {
-  //         ...prev,
-  //         email: Cookies.get("email"),
-  //         password: Cookies.get("password"),
-  //       };
-  //     });
-  //   } else {
-  //     setChecked(false);
-  //   }
-  // }, [error, Cookies]);
+  useEffect(() => {
+    if (error) {
+      Toast.info(error.error);
+    }
+    if (Cookies.get("email")) {
+      setChecked(true);
+      setUser((prev) => {
+        return {
+          ...prev,
+          email: Cookies.get("email"),
+          password: Cookies.get("password"),
+        };
+      });
+    } else {
+      setChecked(false);
+    }
+  }, [error, Cookies]);
 
   if (error) {
     setTimeout(() => {
@@ -189,7 +189,12 @@ const LoginComponent = () => {
         </button>
       </div>
       <div className="checkbox">
-        <input type="checkbox" className="color" />
+        <input
+          type="checkbox"
+          className="color"
+          checked={isChecked}
+          onChange={() => setChecked((prev) => !prev)}
+        />
         Remember me
       </div>
     </>

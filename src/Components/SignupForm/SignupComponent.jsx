@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AppStateContext } from "../../AppState/appState.context";
 import { useHistory } from "react-router-dom";
-
+import Cookies from "js-cookie";
 import Toast from "../../helpers/utils/toast";
 import useHttp from "../../helpers/customHooks/useHttp";
 import { ErrorComponent } from "../ValidateError/ErrorComponent";
@@ -18,6 +18,7 @@ const SignUpComponent = () => {
   const { sendRequest, isLoading, error, clearError } = useHttp();
   const [user, setUser] = useState(INITIAL_USER);
   const { name, email, password } = user;
+  const [isChecked, setChecked] = useState(false);
 
   const [nameError, setNameError] = useState(undefined);
   const [emailError, setEmailError] = useState(undefined);
@@ -96,7 +97,14 @@ const SignUpComponent = () => {
 
       if (response) {
         dispatch({ type: "USER_LOGIN", payload: response.data.message });
-        getLoggedIn();
+        if (isChecked) {
+          Cookies.set("email", user.email);
+          Cookies.set("password", user.password);
+        } else {
+          Cookies.remove("email");
+          Cookies.remove("password");
+        }
+        await getLoggedIn();
         history.push("/");
       }
 
@@ -187,7 +195,12 @@ const SignUpComponent = () => {
         </button>
       </div>
       <div className="checkbox">
-        <input type="checkbox" className="color" />
+        <input
+          type="checkbox"
+          className="color"
+          checked={isChecked}
+          onChange={() => setChecked((prev) => !prev)}
+        />
         Remember me
       </div>
     </>

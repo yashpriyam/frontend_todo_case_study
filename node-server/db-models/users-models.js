@@ -23,6 +23,9 @@ const UserSchema = new mongoose.Schema({
       type: String,
     },
   ],
+  avatar_color: {
+    type: String,
+  },
 
   bio: {
     type: String,

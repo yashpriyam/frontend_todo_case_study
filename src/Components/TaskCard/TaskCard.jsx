@@ -1,12 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppStateContext } from "../../AppState/appState.context";
+import useHttp from "../../helpers/customHooks/useHttp";
 import "./taskCard.css";
 
 export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
+  const { sendRequest } = useHttp();
+
   const { title, description } = card;
-  const { cardListStateAndDispatch } = useContext(AppStateContext);
+  const { cardListStateAndDispatch, authenticateStateAndDispatch } =
+    useContext(AppStateContext);
   const [appState, dispatch] = cardListStateAndDispatch;
+
+  const [authState] = authenticateStateAndDispatch;
+
+  const { id } = JSON.parse(authState);
+
+  useEffect(() => {
+    (async () => {
+      const response = await sendRequest(`/api/auth/user/${id}`);
+      console.log({ response });
+    })();
+  }, []);
+
   const updatedState = [...appState];
+
   const handleCardRemove = () => {
     updatedState[cardlistIdx].cards.splice(cardIdx, 1);
     dispatch({ type: "removeCard", value: updatedState });
@@ -22,6 +39,7 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
     e.dataTransfer.setData("cardIdx", cardIdx);
     e.dataTransfer.setData("cardListIdx", cardlistIdx);
   };
+
   return (
     <div
       className="task-card"
@@ -47,7 +65,7 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
       <br></br>
 
       <div className={`avatar-icon ex-small`}>
-        {true ? (
+        {/* {true ? (
           <img
             src="https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916__340.png"
             alt="profile image"
@@ -55,7 +73,12 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
           />
         ) : (
           <i className="fas fa-user" />
-        )}
+        )} */}
+        {/* <div
+          className={`avatar-image ex-small`}
+          style={{ backgroundColor: avatar_color }}>
+          {name.toLocaleUpperCase().at(0)}
+        </div> */}
       </div>
 
       {/* <button className="card-remove-btn" onClick={handleCardRemove}>
