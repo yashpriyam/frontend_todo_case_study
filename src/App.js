@@ -12,7 +12,7 @@ const App = () => {
     <AppStateContextProvider>
       <Router>
         <div className="App">
-          {/* <LogoutBtn /> */}
+          <LogoutBtn />
           <Switch>
             <Route exact path="/auth" component={AuthPage} />
             <ProtectedRoutes exact path="/" component={Homepage} />
