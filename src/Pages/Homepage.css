@@ -22,3 +22,16 @@
   padding: 5px;
   margin: 10px;
 }
+
+.avatar {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 25.26px;
+  height: 25.26px;
+  left: 395.84px;
+  top: 462.77px;
+
+  /* background: url(image); */
+  border: 1px solid #e1e1e1;
+}

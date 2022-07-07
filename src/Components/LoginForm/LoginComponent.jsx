@@ -24,7 +24,7 @@ const LoginComponent = () => {
 
   const [isChecked, setChecked] = useState(false);
 
-  const { authenticateStateAndDispatch, getLoggedIn } =
+  const { authenticateStateAndDispatch, getLoggedIn, loggedIn } =
     useContext(AppStateContext);
 
   // eslint-disable-next-line no-unused-vars
@@ -70,7 +70,7 @@ const LoginComponent = () => {
 
       if (response) {
         dispatch({ type: "USER_LOGIN", payload: response.data.message });
-        getLoggedIn();
+        await getLoggedIn();
 
         if (isChecked) {
           Cookies.set("email", user.email);
@@ -80,7 +80,6 @@ const LoginComponent = () => {
           Cookies.remove("password");
         }
         setUser(INITIAL_USER);
-
         history.push("/");
       }
     } catch (error) {

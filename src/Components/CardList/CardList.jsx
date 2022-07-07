@@ -44,11 +44,17 @@ export const CardList = ({ cardlist, cardlistIdx }) => {
       className="card-list"
       onDragOver={(e) => onDragOver(e)}
       onDrop={(e) => onDrop(e, cardlist)}>
-      <div>{title}</div>
+      <div className="adjust-content">
+        <h4 className="to-do">{title}</h4>
+        <span className="card-number">
+          {updatedState[cardlistIdx].cards.length}
+        </span>
+      </div>
 
-      <span className="card-number">
-        {updatedState[cardlistIdx].cards.length}
-      </span>
+      <button className="add-button" onClick={handleCardAdd}>
+        <p className="button-color">+</p>
+      </button>
+
       <div className="card-list-container">
         {cards.map((card, cardIdx, arr) => (
           <TaskCard
@@ -59,9 +65,6 @@ export const CardList = ({ cardlist, cardlistIdx }) => {
           />
         ))}
       </div>
-      <button className="card-add-btn" onClick={handleCardAdd}>
-        Add New Card
-      </button>
     </div>
   );
 };

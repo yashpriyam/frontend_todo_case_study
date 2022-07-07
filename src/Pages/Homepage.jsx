@@ -17,8 +17,6 @@ const HomePage = () => {
     (async () => {
       const response = await axios.get("/api/cardList");
 
-      console.log({ response });
-
       localStorage.setItem("cardListId", JSON.stringify(response.data._id));
 
       setCardListData(response.data.cardList);

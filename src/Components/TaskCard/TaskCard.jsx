@@ -28,16 +28,14 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
       onDragStart={(e) => onDragStart(e, card)}
       draggable>
       <br></br>
-      <label>Title</label>
       <input
         name="title"
         onChange={handleCardInput}
         className="task-title"
         value={title}
-        placeholder="title"
+        placeholder="Give your task a title"
       />
       <br></br>
-      <label>Description</label>
       <textarea
         rows="4"
         cols="15"
@@ -45,11 +43,11 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
         onChange={handleCardInput}
         className="task-description"
         value={description}
-        placeholder="description"></textarea>
+        placeholder="Description..."></textarea>
       <br></br>
-      <button className="card-remove-btn" onClick={handleCardRemove}>
+      {/* <button className="card-remove-btn" onClick={handleCardRemove}>
         Remove Card
-      </button>
+      </button> */}
     </div>
   );
 };
