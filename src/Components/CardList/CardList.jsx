@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import uuid from "react-uuid";
 import { AppStateContext } from "../../AppState/appState.context";
 import { TaskCard } from "../TaskCard/TaskCard";
 import "./cardList.css";
@@ -48,7 +47,8 @@ export const CardList = ({ cardlist, cardlistIdx }) => {
     <div
       className="card-list"
       onDragOver={(e) => onDragOver(e)}
-      onDrop={(e) => onDrop(e, cardlist)}>
+      onDrop={(e) => onDrop(e, cardlist)}
+    >
       <div className="adjust-content">
         <h4 className="to-do">{title}</h4>
         <span className="card-number">

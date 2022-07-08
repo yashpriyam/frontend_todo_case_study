@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 import Toast from "../../helpers/utils/toast";
 import useHttp from "../../helpers/customHooks/useHttp";
-import { ErrorComponent } from "../ValidateError/ErrorComponent";
 import "./SignupComponent.css";
 
 const INITIAL_USER = {
@@ -15,7 +14,7 @@ const INITIAL_USER = {
 
 const SignUpComponent = () => {
   const history = useHistory();
-  const { sendRequest, isLoading, error, clearError } = useHttp();
+  const { sendRequest, error, clearError } = useHttp();
   const [user, setUser] = useState(INITIAL_USER);
   const { name, email, password } = user;
   const [isChecked, setChecked] = useState(false);
@@ -26,6 +25,10 @@ const SignUpComponent = () => {
 
   const { authenticateStateAndDispatch, getLoggedIn } =
     useContext(AppStateContext);
+
+  if (emailError || passwordError) {
+    console.error(emailError, passwordError);
+  }
 
   // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = authenticateStateAndDispatch;

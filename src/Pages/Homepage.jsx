@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AppStateContext } from "../AppState/appState.context";
 import { CardList } from "../Components/CardList/CardList.jsx";
-import uuid from "react-uuid";
 import "./Homepage.css";
 import axios from "axios";
 
@@ -10,8 +9,6 @@ const HomePage = () => {
   const [appState, dispatch] = cardListStateAndDispatch;
 
   const [cardListData, setCardListData] = useState([]);
-
-  // console.log({ cardListStateAndDispatch });
 
   useEffect(() => {
     (async () => {
@@ -23,7 +20,7 @@ const HomePage = () => {
 
       dispatch({ type: "getAllCardList", value: response.data.cardList });
     })();
-  }, []);
+  }, [dispatch]);
 
   // console.log({ cardListData });
 

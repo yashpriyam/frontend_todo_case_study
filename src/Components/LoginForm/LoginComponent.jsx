@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 import Toast from "../../helpers/utils/toast";
 import useHttp from "../../helpers/customHooks/useHttp";
 import { AppStateContext } from "../../AppState/appState.context";
-import { ErrorComponent } from "../ValidateError/ErrorComponent";
 
 const INITIAL_USER = {
   email: "",
@@ -24,7 +23,7 @@ const LoginComponent = () => {
 
   const [isChecked, setChecked] = useState(false);
 
-  const { authenticateStateAndDispatch, getLoggedIn, loggedIn } =
+  const { authenticateStateAndDispatch, getLoggedIn } =
     useContext(AppStateContext);
 
   // eslint-disable-next-line no-unused-vars
@@ -46,7 +45,7 @@ const LoginComponent = () => {
     } else {
       setChecked(false);
     }
-  }, [error, Cookies]);
+  }, [error]);
 
   if (error) {
     setTimeout(() => {

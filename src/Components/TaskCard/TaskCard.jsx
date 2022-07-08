@@ -7,8 +7,7 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
   const { sendRequest } = useHttp();
 
   const { id: userId, title, description } = card;
-  const { cardListStateAndDispatch, authenticateStateAndDispatch } =
-    useContext(AppStateContext);
+  const { cardListStateAndDispatch } = useContext(AppStateContext);
   const [appState, dispatch] = cardListStateAndDispatch;
 
   const [userData, setUserData] = useState({});
@@ -19,14 +18,14 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
 
       setUserData(response.data);
     })();
-  }, []);
+  }, [sendRequest, userId]);
 
   const updatedState = [...appState];
 
-  const handleCardRemove = () => {
-    updatedState[cardlistIdx].cards.splice(cardIdx, 1);
-    dispatch({ type: "removeCard", value: updatedState });
-  };
+  // const handleCardRemove = () => {
+  //   updatedState[cardlistIdx].cards.splice(cardIdx, 1);
+  //   dispatch({ type: "removeCard", value: updatedState });
+  // };
 
   const handleCardInput = (e) => {
     updatedState[cardlistIdx].cards[cardIdx][e.target.name] = e.target.value;
@@ -43,7 +42,8 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
     <div
       className="task-card"
       onDragStart={(e) => onDragStart(e, card)}
-      draggable>
+      draggable
+    >
       <br></br>
       <input
         name="title"
@@ -60,14 +60,16 @@ export const TaskCard = ({ card, cardIdx, cardlistIdx }) => {
         onChange={handleCardInput}
         className="task-description"
         value={description}
-        placeholder="Description..."></textarea>
+        placeholder="Description..."
+      ></textarea>
       <br></br>
 
       <div className={`avatar-icon ex-small`}>
         {userData && userData.name && userData.avatar_color && (
           <div
             className={`avatar-image ex-small`}
-            style={{ backgroundColor: userData.avatar_color }}>
+            style={{ backgroundColor: userData.avatar_color }}
+          >
             {userData.name.toLocaleUpperCase().at(0)}
           </div>
         )}
