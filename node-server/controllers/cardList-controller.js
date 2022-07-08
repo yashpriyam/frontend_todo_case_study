@@ -13,14 +13,10 @@ export const updateCardList = async (req, res) => {
   try {
     const { state, cardListId } = req.body;
 
-    console.log(state[0].cards);
-
-    const cardListData = await CardList.replaceOne(
+    await CardList.replaceOne(
       { _id: cardListId },
       { cardList: state, _id: cardListId }
     );
-
-    console.log({ cardListData });
 
     res.send("success");
   } catch (error) {

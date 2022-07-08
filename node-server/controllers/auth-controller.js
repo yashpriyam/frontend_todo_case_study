@@ -88,7 +88,6 @@ const userLogin = async (req, res) => {
 
 const getUserById = async (req, res) => {
   const userId = req.params.id;
-  console.log(userId);
   try {
     const userData = await User.findById(userId);
     const { name, id, email, avatar_color } = userData;

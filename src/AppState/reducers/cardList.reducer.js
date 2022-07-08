@@ -11,7 +11,6 @@ export const cardListReducer = (state, action) => {
       state = action.value;
 
       const cardListId = JSON.parse(localStorage.getItem("cardListId"));
-      console.log({ cardListId });
 
       axios.post("/api/cardList/update", { state, cardListId });
 

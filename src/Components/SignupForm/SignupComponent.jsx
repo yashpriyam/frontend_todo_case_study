@@ -113,7 +113,7 @@ const SignUpComponent = () => {
 
       setUser(INITIAL_USER);
     } catch (error) {
-      console.log({ error: error.message });
+      console.error({ error: error.message });
     }
   };
 

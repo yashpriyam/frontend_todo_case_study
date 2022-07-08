@@ -24,7 +24,7 @@ const useHttp = () => {
         return response;
       } catch (error) {
         if (axios.isCancel(error)) {
-          console.log("Request cancelled");
+          console.warn("Request cancelled");
         } else {
           setError(error.response.data);
         }
