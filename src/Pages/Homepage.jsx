@@ -22,8 +22,6 @@ const HomePage = () => {
     })();
   }, [dispatch]);
 
-  // console.log({ cardListData });
-
   return (
     <div className="homepage-container">
       <div className="cardlist-container">

@@ -13,15 +13,17 @@ const AuthPage = () => {
       <img className="login" src={login} alt="ads" />
 
       <div className="form-login">
-        <div className="kuch-bhi">
+        <div className="auth-container">
           <h4
             className={`log-in ${showForm === "signup" && "active"}`}
-            onClick={() => setShowForm("login")}>
+            onClick={() => setShowForm("login")}
+          >
             Log In
           </h4>
           <h4
             className={`sign-up ${showForm === "login" && "active"}`}
-            onClick={() => setShowForm("signup")}>
+            onClick={() => setShowForm("signup")}
+          >
             Sign up
           </h4>
         </div>

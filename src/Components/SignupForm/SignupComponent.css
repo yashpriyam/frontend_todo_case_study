@@ -55,6 +55,7 @@
   background: #329c89;
   border-radius: 8px;
   color: white;
+  cursor: pointer;
 }
 
 .input-section {
@@ -64,6 +65,7 @@
 .checkbox {
   padding-top: 40px;
   margin-right: 190px;
+  cursor: pointer;
   /* background: #329C89; */
 }
 

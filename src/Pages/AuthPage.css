@@ -1,27 +1,11 @@
-.log-in {
-
-  width: 128px;
-  height: 21px;
-  left: 886px;
-  top: 327px;
-
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 101.1%;
-  /* or 26px */
-
-}
-
-.kuch-bhi {
+.auth-container {
   margin-top: 50px;
   display: flex;
   /* display: inline-block; */
 }
 
-.sign-up {
-
+.sign-up,
+.log-in {
   width: 128px;
   height: 21px;
   left: 886px;
@@ -32,8 +16,8 @@
   font-weight: 400;
   font-size: 26px;
   line-height: 101.1%;
-
+  cursor: pointer;
 }
-.active{
+.active {
   color: rgba(26, 59, 88, 0.33);
 }

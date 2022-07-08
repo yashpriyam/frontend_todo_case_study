@@ -8,7 +8,6 @@
   "scripts": {
     "build-fe": "cd react-client && npm run build",
     "react-client-install": "cd react-client && npm install",
-    "heroku-postbuild": "npm run react-client-install && npm run build-fe && npm run build",
     "local-dev": "nodemon node-server/app.js",
     "dev": "nodemon --exec npm run restart",
     "restart": "rimraf dist && npm run build && npm run start",
