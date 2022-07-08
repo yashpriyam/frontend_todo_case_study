@@ -1,10 +1,10 @@
-import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { axios } from "../utils/axios";
+
+import { useCallback, useState } from "react";
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
-  const source = axios.CancelToken.source();
   const sendRequest = useCallback(
     async (url, method = "get", data = {}, headers = {}, params = {}) => {
       setIsLoading(true);
@@ -16,7 +16,6 @@ const useHttp = () => {
           data,
           headers,
           params,
-          cancelToken: source.token,
         });
         if (typeof response.data === "string") {
           setError("Please go online");
@@ -32,13 +31,8 @@ const useHttp = () => {
         setIsLoading(false);
       }
     },
-    [source.token]
+    []
   );
-
-  useEffect(() => {
-    return () => source.cancel();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const clearError = () => {
     setError(null);
